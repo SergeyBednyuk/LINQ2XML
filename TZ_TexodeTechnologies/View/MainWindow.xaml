@@ -1,0 +1,90 @@
+﻿<Window
+    x:Class="TZ_TexodeTechnologies.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TZ_TexodeTechnologies.ViewModel"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="525"
+    Height="350"
+    mc:Ignorable="d">
+
+    <Window.Resources>
+        <Style x:Key="ButtonStyle">
+            <Setter Property="Control.FontFamily" Value="Times new roman" />
+            <Setter Property="Control.FontSize" Value="14" />
+            <Setter Property="Control.FontWeight" Value="Bold" />
+            <Setter Property="Control.Margin" Value="30" />
+        </Style>
+
+        <XmlDataProvider
+            x:Key="StudentsData"
+            Source="../Students.xml"
+            XPath="Students" />
+    </Window.Resources>
+
+
+
+    <Window.DataContext>
+        <local:MainVindowViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+
+
+        <DataGrid
+            Grid.RowSpan="3"
+            Grid.ColumnSpan="3"
+            Margin="10"
+            AutoGenerateColumns="False"
+            ItemsSource="{Binding Source={StaticResource StudentsData}, XPath=Student}">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    MinWidth="20"
+                    Binding="{Binding XPath=@Id}"
+                    Header="Id" />
+                <DataGridTextColumn
+                    MinWidth="50"
+                    Binding="{Binding XPath=FirstName}"
+                    Header="Name" />
+                <DataGridTextColumn
+                    Width="auto"
+                    Binding="{Binding XPath=Age}"
+                    Header="Age" />
+                <DataGridTextColumn
+                    MinWidth="50"
+                    Binding="{Binding XPath=Gender}"
+                    Header="Gender" />
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            Content="Add"
+            Style="{StaticResource ButtonStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Content="Edit"
+            Style="{StaticResource ButtonStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="2"
+            Content="Remove"
+            Style="{StaticResource ButtonStyle}" />
+    </Grid>
+</Window>

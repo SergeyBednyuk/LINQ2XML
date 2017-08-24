@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\obj\Debug\
+d:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\obj\Debug\
 TZ_TexodeTechnologies
 none
 false
 DEBUG;TRACE
-D:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\App.xaml
-1-1711142684
+d:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\App.xaml
+31277059366
 
-10-1281538523
-691264167744
-View\MainWindow.xaml;
+13-1088404696
+69699600501
+View\AddWindow.xaml;View\EditWindow.xaml;View\MainWindow.xaml;
 
 False
 

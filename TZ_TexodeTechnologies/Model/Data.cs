@@ -12,16 +12,31 @@ using TZ_TexodeTechnologies.Annotations;
 
 namespace TZ_TexodeTechnologies.Model
 {
-    public class Data 
+    public class Data : INotifyPropertyChanged
     {
         private XDocument _xDoc;
 
-        public XDocument Xdoc { get; set; }
-
-        public Data()
+        public XDocument XDoc
         {
-            _xDoc = XDocument.Load(@"D:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\Students.xml");
+            get {
+                if (_xDoc == null)
+                {
+                    _xDoc = XDocument.Load(@"D:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\Students.xml");
+                }
+                return _xDoc;
+            }
+            set
+            {
+                _xDoc = value;
+                //TODO SERIALIZATION don't work from XML
+                NotifyPropertyChanged("XDoc");
+            }
         }
+
+        //public Data()
+        //{
+        //    _xDoc = XDocument.Load(@"D:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\Students.xml");
+        //}
 
         //public static Data GetStudents()
         //{
@@ -35,7 +50,15 @@ namespace TZ_TexodeTechnologies.Model
         //        return _students;
         //    }
         //}
-     
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+        }
     }
 
 }

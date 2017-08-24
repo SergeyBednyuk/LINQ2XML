@@ -8,6 +8,7 @@
     Title="MainWindow"
     Width="525"
     Height="350"
+    Topmost="True"
     mc:Ignorable="d">
 
     <Window.Resources>
@@ -23,8 +24,6 @@
             Source="../Students.xml"
             XPath="Students" />
     </Window.Resources>
-
-
 
     <Window.DataContext>
         <local:MainVindowViewModel />
@@ -42,48 +41,56 @@
         </Grid.ColumnDefinitions>
 
 
+        <ScrollViewer Grid.RowSpan="2" Grid.ColumnSpan="3">
+            <DataGrid
+                Grid.RowSpan="3"
+                Grid.ColumnSpan="3"
+                Margin="10"
+                AutoGenerateColumns="False"
+                ItemsSource="{Binding Source={StaticResource StudentsData}, XPath=Student}"
+                SelectedIndex="{Binding CurrectElementIdMainWindow, Mode=TwoWay}"
+                SelectedItem="{Binding}"
+                VerticalScrollBarVisibility="Auto">
 
-        <DataGrid
-            Grid.RowSpan="3"
-            Grid.ColumnSpan="3"
-            Margin="10"
-            AutoGenerateColumns="False"
-            ItemsSource="{Binding Source={StaticResource StudentsData}, XPath=Student}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                        MinWidth="20"
+                        Binding="{Binding XPath=@Id}"
+                        Header="Id" />
+                    <DataGridTextColumn
+                        MinWidth="50"
+                        Binding="{Binding XPath=FirstName}"
+                        Header="Name" />
+                    <DataGridTextColumn
+                        Width="auto"
+                        Binding="{Binding XPath=Age}"
+                        Header="Age" />
+                    <DataGridTextColumn
+                        MinWidth="50"
+                        Binding="{Binding XPath=Gender}"
+                        Header="Gender" />
+                </DataGrid.Columns>
 
-            <DataGrid.Columns>
-                <DataGridTextColumn
-                    MinWidth="20"
-                    Binding="{Binding XPath=@Id}"
-                    Header="Id" />
-                <DataGridTextColumn
-                    MinWidth="50"
-                    Binding="{Binding XPath=FirstName}"
-                    Header="Name" />
-                <DataGridTextColumn
-                    Width="auto"
-                    Binding="{Binding XPath=Age}"
-                    Header="Age" />
-                <DataGridTextColumn
-                    MinWidth="50"
-                    Binding="{Binding XPath=Gender}"
-                    Header="Gender" />
-            </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
 
-        </DataGrid>
 
         <Button
             Grid.Row="2"
             Grid.Column="0"
+            Command="{Binding ClickAdd}"
             Content="Add"
             Style="{StaticResource ButtonStyle}" />
         <Button
             Grid.Row="2"
             Grid.Column="1"
+            Command="{Binding ClickEdit}"
             Content="Edit"
             Style="{StaticResource ButtonStyle}" />
         <Button
             Grid.Row="2"
             Grid.Column="2"
+            Command="{Binding ClickRemove}"
             Content="Remove"
             Style="{StaticResource ButtonStyle}" />
     </Grid>

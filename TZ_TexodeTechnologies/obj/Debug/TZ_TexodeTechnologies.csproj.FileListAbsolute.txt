@@ -24,5 +24,8 @@ D:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\obj\Debug\TZ_TexodeTech
 D:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\obj\Debug\TZ_TexodeTechnologies.csproj.GenerateResource.Cache
 D:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\obj\Debug\TZ_TexodeTechnologies.exe
 D:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\obj\Debug\TZ_TexodeTechnologies.pdb
-D:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\obj\Debug\TZ_TexodeTechnologies.csprojResolveAssemblyReference.cache
 D:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\obj\Debug\GeneratedInternalTypeHelper.g.cs
+d:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\obj\Debug\View\AddWindow.g.cs
+d:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\obj\Debug\View\EditWindow.g.cs
+d:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\obj\Debug\View\AddWindow.baml
+d:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\obj\Debug\View\EditWindow.baml

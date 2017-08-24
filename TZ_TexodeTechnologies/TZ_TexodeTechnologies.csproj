@@ -92,12 +92,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\Data.cs" />
-    <Compile Include="Model\Student.cs" />
     <Compile Include="Model\StudentsXML.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\AddWindowViewModel.cs" />
+    <Compile Include="ViewModel\EditWindowViewModel.cs" />
     <Compile Include="ViewModel\MainVindowViewModel.cs" />
-    <Compile Include="ViewModel\RemoveWindowViewModel.cs" />
     <Compile Include="View\AddWindow.xaml.cs">
       <DependentUpon>AddWindow.xaml</DependentUpon>
     </Compile>

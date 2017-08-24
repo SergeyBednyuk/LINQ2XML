@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:TZ_TexodeTechnologies.View"
+    xmlns:local="clr-namespace:TZ_TexodeTechnologies.ViewModel"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="EditWindow"
     Width="300"
@@ -14,6 +14,9 @@
             <Setter Property="Control.Margin" Value="50,20" />
         </Style>
     </Window.Resources>
+    <Window.DataContext>
+        <local:EditWindowViewModel />
+    </Window.DataContext>
 
     <Grid>
         <Grid.RowDefinitions>

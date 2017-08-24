@@ -35,8 +35,8 @@ namespace TZ_TexodeTechnologies.ViewModel
             }
         }
 
-        public int CurrectElementIdMainWindow { get; set; }
-
+        public static int CurrectElementIdMainWindow { get; set; }
+        public static XElement XElement { get; set; }
 
         private ICommand _clickAdd;
         public ICommand ClickAdd
@@ -63,6 +63,7 @@ namespace TZ_TexodeTechnologies.ViewModel
                     _clickEdit = new RelayCommand(() =>
                     {
                         EditWindow editWindow = new EditWindow();
+
                         editWindow.Show();
 
                     });
@@ -96,6 +97,8 @@ namespace TZ_TexodeTechnologies.ViewModel
         }
         private void ClickRemoveExecute()
         {
+
+
             var removeElement = from element in Data.XDoc.Element("Students").Elements()
                                 where element.Attribute("Id").Value == Convert.ToString(CurrectElementIdMainWindow)
                                 select element;

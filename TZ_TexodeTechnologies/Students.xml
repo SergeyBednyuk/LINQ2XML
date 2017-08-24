@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Students>
   <Student Id="0">
-    <FirstName>Robert</FirstName>
-    <Last>Jarman</Last>
-    <Age>21</Age>
+    <Age>111</Age>
     <Gender>0</Gender>
+    <FirstName>3210</FirstName>
+    <Last>1234</Last>
   </Student>
   <Student Id="1">
     <FirstName>Leona</FirstName>
@@ -46,6 +46,10 @@
     <FirstName>Александр</FirstName>
     <Last>Иванов</Last>
     <Age>20</Age>
+    <Gender>0</Gender>
+  </Student>
+  <Student Id="8">
+    <Age>0</Age>
     <Gender>0</Gender>
   </Student>
 </Students>

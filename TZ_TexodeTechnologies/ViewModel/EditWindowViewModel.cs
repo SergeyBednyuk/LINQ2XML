@@ -7,25 +7,49 @@ using System.Windows.Input;
 using System.Xml.Linq;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using TZ_TexodeTechnologies.Model;
 using TZ_TexodeTechnologies.ViewModel;
 
 namespace TZ_TexodeTechnologies.ViewModel
 {
     public class EditWindowViewModel : ViewModelBase
     {
-       
-
-        public XElement CurrectElement
+        private Data _data;
+        public Data Data
         {
-            get { return CurrectElement; }
+            get
+            {
+                if (_data == null)
+                {
+                    _data = new Data();
+                }
+                return _data;
+            }
             set
             {
-                CurrectElement = value;
-                RaisePropertyChanged("CurrectElement");
+                _data = value;
+                RaisePropertyChanged("Data");
             }
         }
 
-        private ICommand _clickEdit;
+        private int CurrectElementIdMainWindow = MainVindowViewModel.CurrectElementIdMainWindow;
+        //public XElement CurrentElement = MainVindowViewModel.XElement;
+        private int _id;
+        public int Id
+        {
+            get { return _id; }
+            set
+            {
+                _id = CurrectElementIdMainWindow;
+                RaisePropertyChanged("Id");
+            }
+        }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int Age { get; set; }
+        public int Gender { get; set; }
+
+       private ICommand _clickEdit;
 
         public ICommand ClickEdit
         {
@@ -41,7 +65,7 @@ namespace TZ_TexodeTechnologies.ViewModel
 
         private bool EditCanExecute()
         {
-            if (CurrectElement == null)
+            if (CurrectElementIdMainWindow <= -1 && FirstName != String.Empty && LastName != String.Empty)
             {
                 return false;
             }
@@ -52,7 +76,27 @@ namespace TZ_TexodeTechnologies.ViewModel
         }
         private void ClickEditExecute()
         {
-            
+            Data.XDoc.Element("Students")
+                .Elements("Student")
+                .Where(x => x.Attribute("Id").Value == Convert.ToString(CurrectElementIdMainWindow)).First()
+                .SetElementValue("FirstName", FirstName);
+
+            Data.XDoc.Element("Students")
+                .Elements("Student")
+                .Where(x => x.Attribute("Id").Value == Convert.ToString(CurrectElementIdMainWindow)).First()
+                .SetElementValue("Last", LastName);
+
+            Data.XDoc.Element("Students")
+                .Elements("Student")
+                .Where(x => x.Attribute("Id").Value == Convert.ToString(CurrectElementIdMainWindow)).First()
+                .SetElementValue("Age", Age);
+
+            Data.XDoc.Element("Students")
+                .Elements("Student")
+                .Where(x => x.Attribute("Id").Value == Convert.ToString(CurrectElementIdMainWindow)).First()
+                .SetElementValue("Gender", Gender);
+
+            Data.XDoc.Save(@"D:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\Students.xml");
         }
     }
 }

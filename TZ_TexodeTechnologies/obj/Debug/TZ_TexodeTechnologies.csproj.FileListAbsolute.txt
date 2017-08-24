@@ -29,3 +29,4 @@ d:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\obj\Debug\View\AddWindo
 d:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\obj\Debug\View\EditWindow.g.cs
 d:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\obj\Debug\View\AddWindow.baml
 d:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\obj\Debug\View\EditWindow.baml
+d:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\obj\Debug\TZ_TexodeTechnologies.csprojResolveAssemblyReference.cache

@@ -31,32 +31,49 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.ColumnSpan="2">
             <Label HorizontalAlignment="Center" Content="Id" />
-            <TextBox Margin="50,5" />
+            <TextBox
+                x:Name="EditWindowTxtBxId"
+                Margin="50,5"
+                IsReadOnly="True"
+                Text="{Binding Id, Mode=TwoWay}" />
         </StackPanel>
 
         <StackPanel Grid.Row="1">
             <Label HorizontalAlignment="Center" Content="First name" />
-            <TextBox Margin="30,5" />
+            <TextBox
+                x:Name="EditWindowTxtBxFirstName"
+                Margin="30,5"
+                Text="{Binding FirstName, Mode=TwoWay}" />
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             <Label HorizontalAlignment="Center" Content="Last name" />
-            <TextBox Margin="30,5" />
+            <TextBox
+                x:Name="EditWindowTxtBxLastName"
+                Margin="30,5"
+                Text="{Binding LastName, Mode=TwoWay}" />
         </StackPanel>
 
         <StackPanel Grid.Row="2" Grid.Column="0">
             <Label HorizontalAlignment="Center" Content="Age" />
-            <TextBox Margin="30,5" />
+            <TextBox
+                x:Name="EditWindowTxtBxAge"
+                Margin="30,5"
+                Text="{Binding Age, Mode=TwoWay}" />
         </StackPanel>
 
         <StackPanel Grid.Row="2" Grid.Column="1">
             <Label HorizontalAlignment="Center" Content="Gender" />
-            <TextBox Margin="30,5" />
+            <TextBox
+                x:Name="EditWindowTxtBxGender"
+                Margin="30,5"
+                Text="{Binding Gender, Mode=TwoWay}" />
         </StackPanel>
 
         <Button
             Grid.Row="3"
             Grid.ColumnSpan="2"
+            Command="{Binding ClickEdit}"
             Content="Edit"
             Style="{StaticResource Style}" />
     </Grid>

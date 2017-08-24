@@ -18,6 +18,14 @@
             <Setter Property="Control.FontWeight" Value="Bold" />
             <Setter Property="Control.Margin" Value="30" />
         </Style>
+        <Style TargetType="{x:Type DataGridRow}">
+            <Style.Triggers>
+                <Trigger Property="AlternationIndex" Value="0">
+                    <Setter Property="Background" Value="Aquamarine" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
 
         <XmlDataProvider
             x:Key="StudentsData"
@@ -46,10 +54,11 @@
                 Grid.RowSpan="3"
                 Grid.ColumnSpan="3"
                 Margin="10"
+                AlternationCount="2"
                 AutoGenerateColumns="False"
                 ItemsSource="{Binding Source={StaticResource StudentsData}, XPath=Student}"
                 SelectedIndex="{Binding CurrectElementIdMainWindow, Mode=TwoWay}"
-                SelectedItem="{Binding}"
+                SelectedItem="{Binding XElement, Mode=TwoWay}"
                 VerticalScrollBarVisibility="Auto">
 
                 <DataGrid.Columns>
@@ -57,10 +66,16 @@
                         MinWidth="20"
                         Binding="{Binding XPath=@Id}"
                         Header="Id" />
-                    <DataGridTextColumn
-                        MinWidth="50"
-                        Binding="{Binding XPath=FirstName}"
-                        Header="Name" />
+                    <DataGridTemplateColumn Header="Full Name">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="{Binding XPath=Last}" />
+                                    <Label Content="{Binding XPath=FirstName}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <DataGridTextColumn
                         Width="auto"
                         Binding="{Binding XPath=Age}"
@@ -69,6 +84,7 @@
                         MinWidth="50"
                         Binding="{Binding XPath=Gender}"
                         Header="Gender" />
+
                 </DataGrid.Columns>
 
             </DataGrid>

@@ -96,7 +96,7 @@ namespace TZ_TexodeTechnologies.ViewModel
                 .Where(x => x.Attribute("Id").Value == Convert.ToString(CurrectElementIdMainWindow)).First()
                 .SetElementValue("Gender", Gender);
 
-            Data.XDoc.Save(@"D:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\Students.xml");
+            Data.XDoc.Save(MainVindowViewModel.Path);
         }
     }
 }

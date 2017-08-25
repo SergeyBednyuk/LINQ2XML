@@ -75,7 +75,7 @@ namespace TZ_TexodeTechnologies.ViewModel
                 new XElement("Gender", Gender));
 
             Data.XDoc.Root.Add(xElementNew);
-            Data.XDoc.Save(@"D:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\Students.xml");
+            Data.XDoc.Save(MainVindowViewModel.Path);
       
         }
     }

@@ -35,9 +35,10 @@ namespace TZ_TexodeTechnologies.ViewModel
             }
         }
 
-        public static int CurrectElementIdMainWindow { get; set; }
-        public static XElement XElement { get; set; }
+        public static string Path = @"D:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\Students.xml";
 
+        public static int CurrectElementIdMainWindow { get; set; }
+       
         private ICommand _clickAdd;
         public ICommand ClickAdd
         {
@@ -104,7 +105,7 @@ namespace TZ_TexodeTechnologies.ViewModel
                                 select element;
 
             removeElement.Remove();
-            Data.XDoc.Save(@"D:\itstep\TZ\TZ_TexodeTechnologies\TZ_TexodeTechnologies\Students.xml");
+            Data.XDoc.Save(Path);
         }
     }
 }

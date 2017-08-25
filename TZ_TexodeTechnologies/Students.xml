@@ -49,7 +49,9 @@
     <Gender>0</Gender>
   </Student>
   <Student Id="8">
-    <Age>0</Age>
+    <FirstName>Test</FirstName>
+    <Last>Test</Last>
+    <Age>20</Age>
     <Gender>0</Gender>
   </Student>
 </Students>
